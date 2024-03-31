@@ -1,0 +1,101 @@
+/* ===custom css reset === */
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --font-size: 16px;
+  --border-radius: 5px;
+  --bold-400: 400;
+  --bold-500: 500;
+  --bold-600: 600;
+  --bold-700: 700;
+  --red-color: hsl(0, 100%, 74%);
+  --green-color: hsl(154, 59%, 51%);
+  --blue-color: hsl(248, 32%, 49%);
+  --dark-blue-color: hsl(249, 10%, 26%);
+  --light-black: hsla(0, 0%, 0%, 0.5);
+  --grayish-blue-color: hsl(246, 25%, 77%);
+  --white-color: hsl(0, 0%, 100%);
+  --primary-color: var(--red-color);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: var(--font-family, sans-serif);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* common classes */
+.grayish-blue-color {
+  color: var(--grayish-blue-color, grey);
+}
+.red-color {
+  color: var(--red-color, red);
+}
+.bold-600 {
+  font-weight: var(--bold-600);
+}
+
+/* classes */
+.app {
+  background-color: var(--red-color);
+  background-image: url(./images/bg-intro-desktop.png);
+  display: grid;
+  grid-template-columns: 40% 40%;
+  place-content: center;
+  gap: 1rem;
+  /* margin: auto; */
+  outline: solid green;
+  /* flex-wrap: wrap; */
+}
+/* Column1 - div - info container */
+.info-container {
+  color: var(--white-color, white);
+}
+/* h1 - font-weight: 700; font-size: 28px; */
+.info-container .heading {
+  text-wrap: balance;
+}
+
+.info-container .text {
+  max-width: 77ch;
+}
+
+/* Column2 - div - boxes container */
+.boxes-container {
+}
+.boxes-container .try-it {
+  color: white;
+  text-align: center;
+  padding: 5px;
+  background-color: var(--blue-color);
+  border-radius: var(--border-radius, 7px);
+  box-shadow: 0px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px; /* delete it! */
+}
+
+/* form sign */
+.form-sign {
+  background-color: var(--white-color, white);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.form-sign label,
+.form-sign button,
+.form-sign small {
+  display: block;
+}
