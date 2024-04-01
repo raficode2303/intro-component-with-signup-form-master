@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="icon"
       type="image/png"
@@ -20,12 +21,12 @@
   <body>
     <div class="app">
       <div class="info-container">
-        <h1 class="heading">Learn to code by watching others</h1>
-        <p class="text">
+        <h2 class="heading">Learn to code by watching others</h2>
+        <h5 class="text">
           See how experienced developers solve problems in real-time. Watching
           scripted tutorials is great, but understanding how developers think is
           invaluable.
-        </p>
+        </h5>
       </div>
       <div class="boxes-container">
         <p class="try-it">
@@ -33,40 +34,50 @@
           ><span> then $20/mo. thereafter</span>
         </p>
         <form class="form-sign">
-          <label for="first-name" />
+          <label for="first-name">
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              placeholder="First Name"
+              required
+            />
+          </label>
+
+          <label for="last-name">
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
+              placeholder="Last Name"
+              required
+            />
+          </label>
+
+          <label for="email-address">
+            <input
+              type="email"
+              name="email-address"
+              id="email-address"
+              placeholder="Email Address"
+              required
+            />
+          </label>
+          <label for="password">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
+          </label>
           <input
-            type="text"
-            name="first-name"
-            id="first-name"
-            placeholder="First Name"
-            required
+            type="submit"
+            class="submit-btn uppercase"
+            value="Claim your free trial"
           />
-          <label for="last-name" />
-          <input
-            type="text"
-            name="last-name"
-            id="last-name"
-            placeholder="Last Name"
-            required
-          />
-          <label for="email-address" />
-          <input
-            type="email"
-            name="email-address"
-            id="email-address"
-            placeholder="Email Address"
-            required
-          />
-          <label for="password" />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-          />
-          <button type="submit" class="uppercase">Claim your free trial</button>
           <small
-            ><span class="grayish-vlue-color"
+            ><span class="grayish-blue-color"
               >By clicking the button, you are agreeing to our</span
             ><span class="red-color"> Terms and Services</span>
           </small>
