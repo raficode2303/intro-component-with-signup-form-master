@@ -23,19 +23,7 @@
   padding: 0;
   margin: 0;
 }
-body {
-  font-family: var(--font-family, sans-serif);
-  line-height: 1.5;
-  min-height: 100vh;
-  background-color: black;
-  /* display: grid; */
-  /* place-content: center; */
-}
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
+
 /* common classes */
 .grayish-blue-color {
   color: var(--grayish-blue-color, grey);
@@ -50,38 +38,41 @@ img {
   text-transform: uppercase;
 }
 
+body {
+  font-family: var(--font-family, sans-serif);
+  line-height: 1.5;
+  min-height: 100vh;
+  place-content: center;
+  background-color: black;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* classes */
 .app {
   background-color: var(--red-color);
-  background-image: url(./images/bg-intro-desktop.png);
-  padding: 3rem 1.5rem;
-  margin: auto 1.5rem;
-  /* display: grid; */
-  /* grid-template-columns: 40% 40%; */
-  /* place-content: center; */
-  /* gap: 1rem; */
-  /* margin: auto; */
-  /* flex-wrap: wrap; */
+  padding: 3rem 1rem;
+  margin: auto;
   outline: solid green;
 }
 /* Column1 - div - info container */
 .info-container {
+  width: 100%;
   color: var(--white-color, white);
+  max-width: 50ch;
 }
 /* h1 - font-weight: 700; font-size: 28px; */
 .info-container .heading {
-  text-align: center;
   text-wrap: balance;
   margin-bottom: 2rem;
 }
 
-.info-container .text {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
 /* Column2 - div - boxes container */
 .boxes-container {
+  width: 100%;
 }
 .boxes-container .try-it {
   font-size: 0.83rem;
@@ -89,10 +80,10 @@ img {
   text-align: center;
   padding: 1rem 3rem;
   margin: auto;
+  margin-bottom: 1rem;
   background-color: var(--blue-color);
   border-radius: 0.5rem;
   box-shadow: 0px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 3rem; /* delete it! */
 }
 
 /* form sign */
@@ -101,11 +92,6 @@ img {
   padding: 1.2rem;
   margin: auto;
   border-radius: 0.5rem;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem; */
 }
 .form-sign label,
 .form-sign small {
@@ -115,21 +101,53 @@ img {
   margin: 1rem auto;
 }
 .form-sign input {
-  padding: 1rem;
   width: 100%;
+  padding: 1rem;
+  text-transform: capitalize;
 }
 .form-sign .submit-btn {
   background-color: var(--green-color, green);
   color: var(--white-color, white);
   font-weight: var(--bold-600);
-  border: solid 3px var(--green-color);
-  text-align: center;
-  border-radius: 0.5rem;
   letter-spacing: 1px;
+  text-align: center;
+  border: solid 3px var(--green-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.form-sign .submit-btn:hover {
+  opacity: 0.8;
+}
+.form-sign .submit-btn:active {
+  opacity: 1;
 }
 .form-sign small {
-  display: block;
-  font-size: 11px;
+  font-size: 10px;
   text-align: center;
   padding: 1rem 0px;
+}
+/* === mobile mode === */
+@media (width < 660px) {
+  .app {
+    background-image: url(./images/bg-intro-mobile.png);
+  }
+  .info-container {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+}
+/* === desktop mode === */
+@media (width >= 660px) {
+  .app {
+    background-image: url(./images/bg-intro-desktop.png);
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: 30% 40%;
+    place-items: center;
+    place-content: center;
+    gap: 2rem;
+  }
+  .info-container .heading {
+    font-size: 2rem;
+  }
 }
