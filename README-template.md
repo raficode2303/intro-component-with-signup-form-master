@@ -66,9 +66,9 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-- form input is as entered by the keyboard and not depend on the css visual on the page
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- form input is as shown entered by the keyboard and not depend on the css visual on the page
+- don't change the visual of text input, like text-transform: capitalize;
+  Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:
 

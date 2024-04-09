@@ -1,21 +1,53 @@
-const emptyInputMessages = {
-  firstname: 'First Name cannot be empty',
-  lastname: 'Last Name cannot be empty',
-  email: 'Looks this is not an email',
-  password: 'password cannot be empty',
+const messagesAndPatterns = {
+  firstname: {
+    errorMessage: 'First Name cannot be empty',
+    pattern: '^\\w+.*$',
+  },
+  lastname: { errorMessage: 'Last Name cannot be empty', pattern: '^\\w+.*$' },
+  emailaddress: {
+    errorMessage: 'Looks this is not an email',
+    pattern: '^[a-z]\\w*@[a-z]\\w*[.][a-z]+$',
+  },
+  password: {
+    errorMessage: 'password need to be at least 3 characters',
+    pattern: '^.{3,}$',
+  },
 }
-// patterns for input
-const namePattern = /.+/
 
 // elements
 const formSign = document.querySelector('.form-sign')
 const submitBtn = document.querySelector('.submit-btn')
-// form input is as entered by the keyboard and not depend on the css visual on the page
+// form input is shown as entered by the keyboard and not depend on the css visual on the page
 formSign.addEventListener('submit', (e) => {
   e.preventDefault()
   const formData = new FormData(formSign)
   const formItems = [...formData]
   formItems.forEach((formInput) => {
-    console.log(formInput)
+    const [fieldName, fieldInput] = formInput
+    // TODO!: fieldInput => need to trim space from both sides!
+    const fieldNameKey = fieldName.replaceAll(/-/g, '')
+    const patternToCheck = new RegExp(messagesAndPatterns[fieldNameKey].pattern)
+    const isValidInput = patternToCheck.test(fieldInput)
+    const labelElement = formSign.querySelector(`[for=${fieldName}]`)
+    const inputElement = labelElement.firstElementChild
+
+    console.log('inputElement: ', inputElement)
+    if (!isValidInput) {
+      // add error in label ::after
+      labelElement.dataset.inputError =
+        messagesAndPatterns[fieldNameKey].errorMessage
+      console.log(labelElement, messagesAndPatterns[fieldNameKey])
+      inputElement.classList.add('icon-error')
+      labelElement.classList.add('input-error')
+      inputElement.removeAttribute('placeholder')
+      inputElement.addEventListener('focus', () => {
+        inputElement.classList.remove('icon-error')
+      })
+      // add red icon to input
+    } else {
+      delete labelElement.dataset.inputError
+      labelElement.classList.remove('input-error')
+      inputElement.classList.remove('icon-error')
+    }
   })
 })

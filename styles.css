@@ -107,12 +107,33 @@ img {
   display: block;
 }
 .form-sign label {
-  margin: 1rem auto;
+  position: relative;
+  margin-bottom: 2rem;
 }
+.form-sign label.input-error::after {
+  content: attr(data-input-error);
+  position: absolute;
+  right: 0;
+  font-family: 'Courier New', Courier, monospace;
+  border: none;
+  font-size: 0.8rem;
+  color: red;
+  display: block;
+  text-align: right;
+  /* margin-bottom: -20px; */
+}
+
 .form-sign input {
   width: 100%;
   padding: 1rem;
-  text-transform: capitalize;
+  color: inherit;
+}
+.form-sign input.icon-error {
+  background-color: hsl(0 76.75% 80.95%);
+  background: url(./images/icon-error.svg) no-repeat;
+  background-position-x: 95%;
+  background-position-y: center;
+  color: var(--red-color);
 }
 .form-sign .submit-btn {
   background-color: var(--green-color, green);
@@ -132,7 +153,6 @@ img {
 }
 .form-sign small {
   font-size: 10px;
-  padding: 1rem 0px;
   text-align: center;
 }
 /* === mobile mode === */
