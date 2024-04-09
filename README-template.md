@@ -49,6 +49,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+- TODO!: use adjusting <picture> tag on index.html
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -63,6 +65,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
+
+- form input is as entered by the keyboard and not depend on the css visual on the page
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 

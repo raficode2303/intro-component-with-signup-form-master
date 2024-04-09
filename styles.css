@@ -37,11 +37,20 @@
 .uppercase {
   text-transform: uppercase;
 }
+/* input error when input is empty */
+.input-error {
+  border: solid red;
+}
+.display-none {
+  display: none;
+}
 
+/* tags */
 body {
   font-family: var(--font-family, sans-serif);
   line-height: 1.5;
   min-height: 100vh;
+  /* padding: 1rem; */
   place-content: center;
   background-color: black;
 }
@@ -54,9 +63,9 @@ img {
 /* classes */
 .app {
   background-color: var(--red-color);
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
   margin: auto;
-  outline: solid green;
+  max-width: 90%;
 }
 /* Column1 - div - info container */
 .info-container {
@@ -78,7 +87,7 @@ img {
   font-size: 0.83rem;
   color: white;
   text-align: center;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   margin: auto;
   margin-bottom: 1rem;
   background-color: var(--blue-color);
@@ -123,8 +132,8 @@ img {
 }
 .form-sign small {
   font-size: 10px;
-  text-align: center;
   padding: 1rem 0px;
+  text-align: center;
 }
 /* === mobile mode === */
 @media (width < 660px) {
@@ -140,9 +149,9 @@ img {
 @media (width >= 660px) {
   .app {
     background-image: url(./images/bg-intro-desktop.png);
-    max-width: 90%;
+    /* max-width: 80%; */
     display: grid;
-    grid-template-columns: 30% 40%;
+    grid-template-columns: 40% 45%;
     place-items: center;
     place-content: center;
     gap: 2rem;
