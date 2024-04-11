@@ -21,13 +21,15 @@ const submitBtn = document.querySelector('.submit-btn')
 formSign.addEventListener('submit', (e) => {
   e.preventDefault()
   const formData = new FormData(formSign)
-  const formItems = [...formData]
+  const formItems = [...formData.entries()]
   let inputFieldsLength = formItems.length
   let howManyFieldsAreValid = 0
   formItems.forEach((formInput) => {
+    console.log(formItems, formInput)
     const [fieldName, fieldInput] = formInput
     fieldInput
     const fieldNameKey = fieldName.replaceAll(/-/g, '')
+    console.log(formItems, messagesAndPatterns, fieldNameKey)
     const patternToCheck = new RegExp(messagesAndPatterns[fieldNameKey].pattern)
     const isValidInput = patternToCheck.test(fieldInput)
     const labelElement = formSign.querySelector(`[for=${fieldName}]`)
