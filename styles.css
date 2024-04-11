@@ -79,6 +79,9 @@ img {
   text-wrap: balance;
   margin-bottom: 2rem;
 }
+.info-container .text {
+  font-size: 11px;
+}
 
 /* Column2 - div - boxes container */
 .boxes-container {
