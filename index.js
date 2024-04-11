@@ -21,6 +21,8 @@ const submitBtn = document.querySelector('.submit-btn')
 formSign.addEventListener('submit', (e) => {
   e.preventDefault()
   const formData = new FormData(formSign)
+  // delete hidden input of Netlify with the name="form-name" (key)
+  formData.delete('form-name')
   const formItems = [...formData.entries()]
   let inputFieldsLength = formItems.length
   let howManyFieldsAreValid = 0
