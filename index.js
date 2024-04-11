@@ -1,7 +1,7 @@
 const messagesAndPatterns = {
   firstname: {
     errorMessage: 'First Name cannot be empty',
-    pattern: '^\\w+.*$',
+    pattern: '^\\w+$',
   },
   lastname: { errorMessage: 'Last Name cannot be empty', pattern: '^\\w+.*$' },
   emailaddress: {
@@ -10,7 +10,7 @@ const messagesAndPatterns = {
   },
   password: {
     errorMessage: 'password need to be at least 3 characters',
-    pattern: '^.{3,}$',
+    pattern: '^[^\\s]{3,}$',
   },
 }
 
@@ -24,7 +24,8 @@ formSign.addEventListener('submit', (e) => {
   const formItems = [...formData]
   formItems.forEach((formInput) => {
     const [fieldName, fieldInput] = formInput
-    // TODO!: fieldInput => need to trim space from both sides!
+    // trim space form both sides of input field!
+    fieldInput
     const fieldNameKey = fieldName.replaceAll(/-/g, '')
     const patternToCheck = new RegExp(messagesAndPatterns[fieldNameKey].pattern)
     const isValidInput = patternToCheck.test(fieldInput)
