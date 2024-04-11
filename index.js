@@ -56,7 +56,7 @@ formSign.addEventListener('submit', (e) => {
 
   if (inputFieldsLength === howManyFieldsAreValid) {
     setTimeout(() => {
-      alert('you are sign in 👍')
+      console.log('you are sign in 👍')
     }, 100)
   }
 })
