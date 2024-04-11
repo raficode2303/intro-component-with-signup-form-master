@@ -33,13 +33,19 @@
           <span class="bold-600">Try it free 7 days</span
           ><span> then $20/mo. thereafter</span>
         </p>
-        <form class="form-sign">
+        <form
+          class="form-sign"
+          name="sign-in"
+          method="POST"
+          data-netlify="true"
+        >
           <label for="first-name">
             <input
               type="text"
               name="first-name"
               id="first-name"
               placeholder="First Name"
+              pattern="^[^\s]*[^\s]$"
             />
           </label>
 
@@ -49,6 +55,7 @@
               name="last-name"
               id="last-name"
               placeholder="Last Name"
+              pattern="^[^\s]*[^\s]$"
             />
           </label>
 
@@ -58,6 +65,7 @@
               name="email-address"
               id="email-address"
               placeholder="Email Address"
+              pattern="^[^\s]*[^\s]$"
             />
           </label>
           <label for="password">
@@ -66,6 +74,7 @@
               name="password"
               id="password"
               placeholder="Password"
+              pattern="^[^\s]*[^\s]$"
             />
           </label>
           <input

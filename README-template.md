@@ -44,43 +44,27 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [github](https://github.com/raficode2303/intro-component-with-signup-form-master.git)
+- Live Site URL: [Netlify](https://intro-component-with-signup-form-2024.netlify.app/)
 
 ## My process
 
 - TODO!: use adjusting <picture> tag on index.html
+- TODO!: more X4
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+-
 
 ### What I learned
 
-- form input is as shown entered by the keyboard and not depend on the css visual on the page
+- form input is shown as entered by the keyboard and not depend on the css visual on the page
 - don't change the visual of text input, like text-transform: capitalize;
-  Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.info-container .heading {
-  text-wrap: balance;
-}
-```
 
 ```js
 const proudOfThisFunc = () => {
@@ -116,5 +100,3 @@ Use this section to outline areas that you want to continue focusing on in futur
 ## Acknowledgments
 
 This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

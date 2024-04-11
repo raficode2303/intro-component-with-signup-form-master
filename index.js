@@ -22,9 +22,10 @@ formSign.addEventListener('submit', (e) => {
   e.preventDefault()
   const formData = new FormData(formSign)
   const formItems = [...formData]
+  let inputFieldsLength = formItems.length
+  let howManyFieldsAreValid = 0
   formItems.forEach((formInput) => {
     const [fieldName, fieldInput] = formInput
-    // trim space form both sides of input field!
     fieldInput
     const fieldNameKey = fieldName.replaceAll(/-/g, '')
     const patternToCheck = new RegExp(messagesAndPatterns[fieldNameKey].pattern)
@@ -34,7 +35,7 @@ formSign.addEventListener('submit', (e) => {
 
     console.log('inputElement: ', inputElement)
     if (!isValidInput) {
-      // add error in label ::after
+      // add error message in label ::after
       labelElement.dataset.inputError =
         messagesAndPatterns[fieldNameKey].errorMessage
       console.log(labelElement, messagesAndPatterns[fieldNameKey])
@@ -44,11 +45,18 @@ formSign.addEventListener('submit', (e) => {
       inputElement.addEventListener('focus', () => {
         inputElement.classList.remove('icon-error')
       })
-      // add red icon to input
+      // adding red icon to input
     } else {
       delete labelElement.dataset.inputError
       labelElement.classList.remove('input-error')
       inputElement.classList.remove('icon-error')
+      howManyFieldsAreValid++
     }
   })
+
+  if (inputFieldsLength === howManyFieldsAreValid) {
+    setTimeout(() => {
+      alert('you are sign in 👍')
+    }, 100)
+  }
 })
