@@ -22,6 +22,7 @@ formSign.addEventListener('submit', (e) => {
   e.preventDefault()
   const formData = new FormData(formSign)
   // delete hidden input of Netlify with the name="form-name" (key)
+  // TODO: this solution not work...
   formData.delete('form-name')
   const formItems = [...formData.entries()]
   let inputFieldsLength = formItems.length

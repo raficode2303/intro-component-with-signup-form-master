@@ -20,23 +20,25 @@
   </head>
   <body>
     <div class="app">
-      <div class="info-container">
+      <section class="info-container">
         <h2 class="heading">Learn to code by watching others</h2>
         <h6 class="text bold-600">
           See how experienced developers solve problems in real-time. Watching
           scripted tutorials is great, but understanding how developers think is
           invaluable.
         </h6>
-      </div>
+      </section>
       <div class="boxes-container">
         <p class="try-it">
-          <span class="bold-600">Try it free 7 days</span
+          <span class="bold-600" id="try-it-free-form-sign-in"
+            >Try it free 7 days</span
           ><span> then $20/mo. thereafter</span>
         </p>
         <form
           class="form-sign"
           name="sign-in"
           method="POST"
+          aria-labelledby="try-it-free-form-sign-in"
           data-netlify="true"
         >
           <!-- Netlify form adding here <input type="hidden" name="form-name" value="sign-in"> that affect to FormData -->
