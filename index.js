@@ -16,25 +16,23 @@ const messagesAndPatterns = {
 
 // elements
 const formSign = document.querySelector('.form-sign')
+const formSignLabels = document.querySelectorAll('.form-sign label')
 const submitBtn = document.querySelector('.submit-btn')
 // form input is shown as entered by the keyboard and not depend on the css visual on the page
 formSign.addEventListener('submit', (e) => {
   e.preventDefault()
   const formData = new FormData(formSign)
-  // delete hidden input of Netlify with the name="form-name" (key)
-  // TODO: this solution not work...
-  formData.delete('form-name')
+  //  hidden input of Netlify with the name="form-name" (key) appear also when online
   const formItems = [...formData.entries()]
-  let inputFieldsLength = formItems.length
+  let inputFieldsLength = formSignLabels.length
   let howManyFieldsAreValid = 0
   formItems.forEach((formInput) => {
     console.log(formItems, formInput)
     const [fieldName, fieldInput] = formInput
     fieldInput
     const fieldNameKey = fieldName.replaceAll(/-/g, '')
-    console.log(formItems, messagesAndPatterns, fieldNameKey)
-    const patternToCheck = new RegExp(messagesAndPatterns[fieldNameKey].pattern)
-    const isValidInput = patternToCheck.test(fieldInput)
+    // const patternToCheck = new RegExp(messagesAndPatterns[fieldNameKey].pattern)
+    const isValidInput = fieldInput.length > 0
     const labelElement = formSign.querySelector(`[for=${fieldName}]`)
     const inputElement = labelElement.firstElementChild
 
@@ -58,7 +56,7 @@ formSign.addEventListener('submit', (e) => {
       howManyFieldsAreValid++
     }
   })
-
+  console.log(inputFieldsLength, howManyFieldsAreValid)
   if (inputFieldsLength === howManyFieldsAreValid) {
     setTimeout(() => {
       console.log('you are sign in 👍')
