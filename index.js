@@ -21,11 +21,11 @@ const submitBtn = document.querySelector('.submit-btn')
 // form input is shown as entered by the keyboard and not depend on the css visual on the page
 formSign.addEventListener('submit', (e) => {
   // disabled e.preventDefault() if you want Netlify forms to work
-  // e.preventDefault()
+  e.preventDefault()
   const formData = new FormData(formSign)
   //  hidden input of Netlify with the name="form-name" (key) appear also when online
   // deleting hidden input from formData - so netlify forms not affect the input data
-  delete formData('form-name')
+  formData.delete('form-name')
   const formItems = [...formData.entries()]
   let inputFieldsLength = formSignLabels.length
   let howManyFieldsAreValid = 0
