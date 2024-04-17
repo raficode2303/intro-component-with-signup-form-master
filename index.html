@@ -39,9 +39,10 @@
           name="sign-in"
           aria-labelledby="try-it-free-form-sign-in"
           data-netlify="true"
+          method="POST"
         >
           <!-- Netlify form adding here <input type="hidden" name="form-name" value="sign-in"> that affect to FormData -->
-          <label for="first-name">
+          <label>
             <input
               type="text"
               name="first-name"
@@ -51,7 +52,7 @@
             />
           </label>
 
-          <label for="last-name">
+          <label>
             <input
               type="text"
               name="last-name"
@@ -61,7 +62,7 @@
             />
           </label>
 
-          <label for="email-address">
+          <label>
             <input
               type="email"
               name="email-address"
@@ -70,7 +71,7 @@
               pattern="^[a-z]\w*@[a-z]\w*[.][a-z]+$"
             />
           </label>
-          <label for="password">
+          <label>
             <input
               type="password"
               name="password"

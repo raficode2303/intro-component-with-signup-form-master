@@ -34,7 +34,11 @@ formSign.addEventListener('submit', (e) => {
     const fieldNameKey = fieldName.replaceAll(/-/g, '')
     // const patternToCheck = new RegExp(messagesAndPatterns[fieldNameKey].pattern)
     const isValidInput = fieldInput.length > 0
-    const labelElement = formSign.querySelector(`[for=${fieldName}]`)
+    console.log(formSign.querySelector(`input#${fieldName}`))
+    const labelElement = formSign.querySelector(
+      `input#${fieldName}`
+    ).parentElement
+
     const inputElement = labelElement.firstElementChild
 
     console.log('inputElement: ', inputElement)
