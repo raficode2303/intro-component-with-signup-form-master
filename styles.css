@@ -66,6 +66,7 @@ img {
   background-color: var(--red-color, red);
   padding: 7rem;
   margin: auto 1rem;
+  border: outset springgreen;
   /* max-width: 95%; */
 }
 /* Column1 - div - info container */
