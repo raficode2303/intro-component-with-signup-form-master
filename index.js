@@ -44,8 +44,7 @@ formSign.addEventListener('submit', (e) => {
     const inputElement = labelElement.firstElementChild
 
     console.log('inputElement: ', inputElement)
-    if (!isValidInput) {
-      // add error message in label ::after
+    const updateField = () => {
       labelElement.dataset.inputError =
         messagesAndPatterns[fieldNameKey].errorMessage
       console.log(labelElement, messagesAndPatterns[fieldNameKey])
@@ -55,6 +54,15 @@ formSign.addEventListener('submit', (e) => {
       inputElement.addEventListener('focus', () => {
         inputElement.classList.remove('icon-error')
       })
+    }
+    if (!isValidInput) {
+      // add error message in label ::after
+      if (document.startViewTransition) {
+        document.startViewTransition(() => {
+          updateField()
+        })
+      } else updateField()
+
       // adding red icon to input
     } else {
       delete labelElement.dataset.inputError
